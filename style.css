@@ -1,20 +1,123 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Poppins',sans-serif;
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-body{
-    min-height: 100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+
+body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    position:relative;
+    max-width:900px;
+    width:100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin:0 15px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.container header {
+    position: relative;
+    font-size:20px;
+    font-weight:600;
+    color:#333;
+}
+
+.container header::before {
+    content: "";
+    position:absolute;
+    bottom: -2px;
+    left:0px;
+    height:3px;
+    width:27px;
+    background-color:#035f80 ;
+    border-radius: 8px;
+}
+
+.container form {
+    position:relative;
+    margin-top: 16px;
+    min-height: 490px;
+    background-color: #fff;
+}
+
+.container form .details {
+    margin: top 30px;
+}
+
+.container form .title {
+    display:block;
+    margin-bottom:8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0 ;
+    color:#333;
+}
+
+.container form .fields {
+    display:flex;
+    align-items: center;
+    justify-content:space-between ;
+    flex-wrap: wrap;
+}
+
+.input-field {
+    display: flex;
+    width: calc(100% / 3 - 15px); /* Adjust width for 3 inputs on one row */
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.input-field label {
+    font-size: 12px;
+    font-weight:500;
+    color:#2e2e2e;
+}
+
+.input-field input {
+    outline:none;
+    font-size:14px;
+    font-weight:400;
+    color:#333;
+    border-radius:5px;
+    border:1px solid #aaa;
+    padding:0 15px;
+    height: 42px;
+    margin:8px 0;
+}
+
+.input-field input:is(:focus, :valid) {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+
+.input-field input[type="date"] {
+    color: #707070;
+}
+
+.input-field input[type="date"]:valid {
+    color: #333;
 }
